@@ -71,7 +71,7 @@ Or copy the files into a directory on the Pi, e.g. `/home/pi/sensory_board`.
 ### 2. Make scripts executable
 
 ```bash
-chmod +x main.py install_service.sh uninstall_service.sh
+chmod +x main.py install_service.sh uninstall_service.sh check_usb.sh
 ```
 
 ### 3. Install system dependencies
@@ -83,13 +83,19 @@ sudo apt-get update
 sudo apt-get install -y python3 python3-venv vlc python3-vlc
 ```
 
-### 4. Install and enable the systemd service
+### 4. Find the UUID for your usb-stick
+
+Run the `check_usb.sh` and take note of the UUID of your usb-stick.
+
+### 5. Install and enable the systemd service
 
 Run the install script as the user you want the service to run as (typically `pi`), using `sudo`:
 
 ```bash
-sudo ./install_service.sh
+sudo ./install_service.sh {UUID}
 ```
+
+Replace {UUID} with your usb-sticks UUID.
 
 What this script does:
 
@@ -100,9 +106,10 @@ What this script does:
   - `WorkingDirectory` set to the project directory.
   - `User` and `Group` set to the non‑root user who invoked `sudo`.
   - Audio‑related environment variables (`PULSE_SERVER`, `XDG_RUNTIME_DIR`, `DISPLAY`).
+- Writes the usb-stick to `/etc/fstab`
 - Reloads systemd and enables the service at boot.
 
-### 5. Start / stop / check the service
+### 6. Start / stop / check the service
 
 Start the service:
 
