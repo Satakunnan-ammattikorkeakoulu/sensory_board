@@ -1,0 +1,19 @@
+[Unit]
+Description=Sensory Board Service
+After=network.target
+
+[Service]
+ExecStart=/home/project/sensory_board/main.py
+WorkingDirectory=/home/project/sensory_board
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=project
+Group=project
+Environment=PYTHONBUFFERED=1
+Environment=PULSE_SERVER=unix:/run/user/1000/pulse/native
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=multi-user.target
