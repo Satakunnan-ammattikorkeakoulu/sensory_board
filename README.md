@@ -173,8 +173,8 @@ Default GPIO layout (BCM numbering):
 
 The LED pin is configured via `led_pin` in `config.json` (default: GPIO 18).
 
-[!NOTE]
-LED script is not implemented fully.
+> [!NOTE]
+> LED script is not implemented fully.
 
 ---
 
