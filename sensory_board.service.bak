@@ -1,6 +1,6 @@
 [Unit]
 Description=Sensory Board Service
-After=network.target
+After=sound.target
 
 [Service]
 ExecStart=/home/project/sensory_board/main.py
