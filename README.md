@@ -52,6 +52,15 @@ This project is **not** intended for non‑Raspberry Pi boards, because it uses 
     - Have access to GPIO (often via the `gpio` group, or by running the service as root).
     - Have access to the audio device.
 
+- **USB-stick**
+  
+  - The usb-stick holds the audio files that will be played.
+  - Note:
+    - Only one usb-stick should be plugged in at any given time.
+    - Use the same usb-stick with this device that you used when you installed the software.
+    - By default the filenames should be `1.mp3`, `2.mp3`, ..., `6.mp3`.
+      - If you want to change the naming convention you need to change the `config.json`.
+
 ---
 
 ## Installation
@@ -180,6 +189,14 @@ The LED pin is configured via `led_pin` in `config.json` (default: GPIO 18).
 
 > [!NOTE]
 > LED script is not implemented fully.
+
+### Pins mapping to filenames
+
+By default the files are mapped to the GPIO pins in increasing order.
+
+| 1.mp3 | 2.mp3 | 3.mp3 |
+| ----- | ----- | ----- |
+| 4.mp3 | 5.mp3 | 6.mp3 |
 
 ---
 
