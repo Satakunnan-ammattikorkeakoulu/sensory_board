@@ -165,11 +165,9 @@ Config file containing the paths to audio files and pin mappings is `config.json
 
 Default GPIO layout (BCM numbering):
 
-| ------- | ------- | ------- |
 | GPIO 4  | GPIO 13 | GPIO 17 |
 | ------- | ------- | ------- |
 | GPIO 19 | GPIO 26 | GPIO 27 |
-| ------- | ------- | ------- |
 
 The LED pin is configured via `led_pin` in `config.json` (default: GPIO 18).
 
