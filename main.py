@@ -1,4 +1,4 @@
-#!/home/project/sensory_board/venv/bin/python
+#!/usr/bin/env python3
 
 import RPi.GPIO as GPIO
 import vlc
